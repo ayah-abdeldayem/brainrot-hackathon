@@ -3,7 +3,7 @@ import random
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QPixmap
-
+.fromkeys(key, value)
 # Sample emails with sender address, subject, and body
 emails = [
     {
