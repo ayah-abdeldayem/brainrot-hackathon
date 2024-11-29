@@ -85,10 +85,7 @@ emails = [
     "image": "phish_email_11.png",  # Placeholder for phishing email image
     "explanation": "Phishing attempt. The domain ('apple-security.com') is not Apple's official domain. Apple would ask you to log in via their official site or app without including suspicious links."
 }
-
 ]
-
-
 # Initialize score and email pool
 score = 0
 shown_emails = []
@@ -101,25 +98,20 @@ def update_score():
 def show_email():
     global current_email
 
-    # If all emails have been shown, reset the list
     if len(shown_emails) == len(emails):
         show_final_score()
         return
 
-    # Select a random email from the list of emails that have not been shown
     remaining_emails = [email for email in emails if email not in shown_emails]
     current_email = random.choice(remaining_emails)
-    shown_emails.append(current_email)  # Mark this email as shown
-    
-    # Update the email label with the selected email details
+    shown_emails.append(current_email)
+
     email_details_label.setText(f"From: {current_email['sender']}\nSubject: {current_email['subject']}\n\n{current_email['body']}")
-    
-    # Load and display the image associated with the email
+
     pixmap = QPixmap(current_email["image"])
     image_label.setPixmap(pixmap)
     image_label.setAlignment(Qt.AlignCenter)
-    
-    # Hide explanation until after answer is given
+
     explanation_label.setText("")
 
 # Function to handle the "Phish" button click
@@ -130,10 +122,9 @@ def check_phish():
         explanation = f"Correct! This is a phishing email.\n\nExplanation: {current_email['explanation']}"
     else:
         explanation = f"Wrong! This is a safe email.\n\nExplanation: {current_email['explanation']}"
-    
     show_explanation(explanation)
     update_score()
-    QTimer.singleShot(5000, show_email)  # Show next email after 5 seconds
+    QTimer.singleShot(5000, show_email)
 
 # Function to handle the "Safe" button click
 def check_safe():
@@ -143,52 +134,42 @@ def check_safe():
         explanation = f"Correct! This is a safe email.\n\nExplanation: {current_email['explanation']}"
     else:
         explanation = f"Wrong! This is a phishing email.\n\nExplanation: {current_email['explanation']}"
-    
     show_explanation(explanation)
     update_score()
-    QTimer.singleShot(5000, show_email)  # Show next email after 5 seconds
+    QTimer.singleShot(5000, show_email)
 
 # Function to show explanation
 def show_explanation(explanation):
     explanation_label.setText(explanation)
-    explanation_label.setStyleSheet("font-size: 16px; color: black; padding: 10px; background-color: #f0f8ff; border-radius: 5px;")
+    explanation_label.setStyleSheet("font-size: 16px; color: #333; padding: 10px; background-color: #d0f0f8; border-radius: 8px;")
 
-# Function to show the final score and cybersecurity tips
-# Function to show the final score and cybersecurity tips
-# Function to show the final score and cybersecurity tips
+# Function to show the final score
 def show_final_score():
     final_score_message = f"Your final score is: {score} / {len(emails)}"
     tips = """
-    Cybersecurity Tips for Identifying Phishing Emails:
-    - Always check the sender's email address carefully.
-    - Look for spelling or grammatical errors in the email.
-    - Avoid clicking on links or downloading attachments from unknown senders.
-    - Be cautious of emails with urgent language or requests for personal information.
-    - Never provide sensitive information (like passwords or credit card numbers) via email.
-    - Verify requests through official channels or websites.
-    - Check for a secure connection (look for HTTPS) when providing sensitive information online.
-    - Don't trust unsolicited offers of free products or services.
+    Cybersecurity Tips:
+    - Check sender email addresses carefully.
+    - Avoid clicking suspicious links.
+    - Never provide sensitive information via email.
+    - Verify the authenticity of emails from trusted sources.
     """
 
-    # Create the message box
     msg_box = QMessageBox(window)
     msg_box.setIcon(QMessageBox.Information)
     msg_box.setWindowTitle("Final Score")
     msg_box.setText(final_score_message + "\n\n" + tips)
     msg_box.setStandardButtons(QMessageBox.Ok)
 
-    # Set custom stylesheet for better readability
     msg_box.setStyleSheet("""
-        background-color: #f0f8ff;
-        color: #333333;
-        font-size: 16px;
-        padding: 10px;
-        border-radius: 5px;
+        background-color: #f8eef7; 
+        color: #555; 
+        font-size: 16px; 
+        padding: 10px; 
+        border-radius: 8px;
     """)
 
-    msg_box.exec_()  # Show the message box
-    QApplication.quit()  # Quit the application after the message box is closed
-
+    msg_box.exec_()
+    QApplication.quit()
 
 # Set up the PyQt5 application
 app = QApplication(sys.argv)
@@ -197,26 +178,26 @@ app = QApplication(sys.argv)
 window = QWidget()
 window.setWindowTitle("Phishing Email Detector Game")
 window.setGeometry(100, 100, 600, 500)
-window.setStyleSheet("background-color: #f4f7f6;")  # Set background color to a pastel color
+window.setStyleSheet("background-color: #fff4f9;")
 
 # Create a title label
 title_label = QLabel("Phishing Email Detector Game")
-title_label.setStyleSheet("font-size: 22px; font-weight: bold; color: #5f6368;")
+title_label.setStyleSheet("font-size: 24px; font-weight: bold; color: #705d82;")
 title_label.setAlignment(Qt.AlignCenter)
 
 # Create a label to show the email details
 email_details_label = QLabel("")
-email_details_label.setStyleSheet("font-size: 14px; color: #333; padding: 20px; background-color: #ffffff; border-radius: 5px;")
+email_details_label.setStyleSheet("font-size: 14px; color: #444; padding: 15px; background-color: #f3f0ff; border-radius: 8px;")
 email_details_label.setAlignment(Qt.AlignCenter)
 email_details_label.setWordWrap(True)
 
 # Create a score label
 score_label = QLabel("Score: 0")
-score_label.setStyleSheet("font-size: 18px; font-weight: bold; color: #5f6368;")
+score_label.setStyleSheet("font-size: 18px; font-weight: bold; color: #707ea3;")
 
 # Create the explanation label
 explanation_label = QLabel("")
-explanation_label.setStyleSheet("font-size: 14px; color: #333; padding: 20px; background-color: #ffffff; border-radius: 5px;")
+explanation_label.setStyleSheet("font-size: 14px; color: #444; padding: 15px; background-color: #f3f0ff; border-radius: 8px;")
 explanation_label.setAlignment(Qt.AlignCenter)
 explanation_label.setWordWrap(True)
 
@@ -226,11 +207,11 @@ image_label.setAlignment(Qt.AlignCenter)
 
 # Create buttons for "Phish" and "Safe"
 phish_button = QPushButton("Phish")
-phish_button.setStyleSheet("background-color: #ff6f61; color: white; font-size: 16px; padding: 10px; border-radius: 5px;")
+phish_button.setStyleSheet("background-color: #f28a8a; color: white; font-size: 16px; padding: 10px; border-radius: 8px;")
 phish_button.clicked.connect(check_phish)
 
 safe_button = QPushButton("Safe")
-safe_button.setStyleSheet("background-color: #4caf50; color: white; font-size: 16px; padding: 10px; border-radius: 5px;")
+safe_button.setStyleSheet("background-color: #87ceeb; color: white; font-size: 16px; padding: 10px; border-radius: 8px;")
 safe_button.clicked.connect(check_safe)
 
 # Create a layout
