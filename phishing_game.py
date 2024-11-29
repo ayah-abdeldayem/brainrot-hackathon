@@ -8,7 +8,7 @@ emails = [
     {
         "sender": "support@amazon.com",
         "subject": "Your Amazon Order #123-4567890-1234567 Has Shipped",
-        "body": "Hello Ayah,\n\nYour order has been shipped and is on its way! You can track your package here: [link].\n\nThank you for shopping with us,\nThe Amazon Team",
+        "body": "Hello Ciara,\n\nYour order has been shipped and is on its way! You can track your package here: [link].\n\nThank you for shopping with us,\nThe Amazon Team",
         "is_phish": False,
         "image": "safe_email_1.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because the sender is from Amazon's official domain, the content is relevant, and the link directs to Amazon's website."
@@ -16,7 +16,7 @@ emails = [
     {
         "sender": "billing@spotify.com",
         "subject": "Your Spotify Premium Subscription Renewal Confirmation",
-        "body": "Hi Ayah,\n\nYour Spotify Premium subscription has been successfully renewed. The payment of $9.99 has been charged to your account.\n\nNeed help? Contact us here: [link].\n\nThanks,\nThe Spotify Team",
+        "body": "Hi Audrey,\n\nYour Spotify Premium subscription has been successfully renewed. The payment of $9.99 has been charged to your account.\n\nNeed help? Contact us here: [link].\n\nThanks,\nThe Spotify Team",
         "is_phish": False,
         "image": "safe_email_2.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because it comes from Spotify's official domain, does not ask for sensitive information, and communicates relevant details."
@@ -32,7 +32,7 @@ emails = [
     {
         "sender": "alerts@chase.com",
         "subject": "Unusual Activity Detected on Your Credit Card",
-        "body": "Dear Ayah Abdeldayem,\n\nWe detected unusual activity on your Chase credit card ending in 1234. Please log into your account via the Chase website or app to review the transaction.\n\nFor security, we have not included a link in this email. Please visit chase.com directly to access your account.\n\nThank you for your attention,\nChase Customer Service",
+        "body": "Dear Audrey Chen,\n\nWe detected unusual activity on your Chase credit card ending in 1234. Please log into your account via the Chase website or app to review the transaction.\n\nFor security, we have not included a link in this email. Please visit chase.com directly to access your account.\n\nThank you for your attention,\nChase Customer Service",
         "is_phish": False,
         "image": "safe_email_3.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because Chase avoids including links, uses their official domain, and encourages secure practices."
@@ -48,7 +48,7 @@ emails = [
     {
         "sender": "support@paypal.com",
         "subject": "You’ve received money!",
-        "body": "Hi Ayah,\n\nYou have received $50.00 from John Smith. Log in to your PayPal account to review the transaction.\n\nThanks for using PayPal,\nThe PayPal Team",
+        "body": "Hi Ciara,\n\nYou have received $50.00 from John Smith. Log in to your PayPal account to review the transaction.\n\nThanks for using PayPal,\nThe PayPal Team",
         "is_phish": False,
         "image": "safe_email_4.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because it comes from PayPal's official domain, does not include any suspicious links, and provides accurate transaction details."
@@ -64,7 +64,7 @@ emails = [
     {
         "sender": "team@linkedin.com",
         "subject": "You Have a New Connection Request",
-        "body": "Hi Ayah,\n\nYou have a new connection request from John Smith. View their profile and decide if you'd like to connect.\n\n[Accept] [Decline]\n\nRegards,\nThe LinkedIn Team",
+        "body": "Hi Morgan,\n\nYou have a new connection request from John Smith. View their profile and decide if you'd like to connect.\n\n[Accept] [Decline]\n\nRegards,\nThe LinkedIn Team",
         "is_phish": False,
         "image": "safe_email_5.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because it comes from LinkedIn's official domain, uses clear and relevant messaging, and does not request sensitive information."
