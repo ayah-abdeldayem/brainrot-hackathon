@@ -3,40 +3,23 @@ import random
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QPixmap
-.fromkeys(key, value)
 # Sample emails with sender address, subject, and body
 emails = [
     {
-        "sender": "service@apple-support.com",
-        "subject": "Important: Your Apple ID has been locked",
-        "body": "Dear Customer, we noticed suspicious activity in your account. Your Apple ID has been temporarily locked. To unlock it, click here.",
-        "is_phish": True,
-        "image": "phish_email_3.png",  # Placeholder for phishing email image
-        "explanation": "This email is phishing because it uses a generic greeting instead of your name. Legitimate companies like Apple would never ask for your credentials via email. The sender's address is also fake."
+        "sender": "support@amazon.com",
+        "subject": "Your Amazon Order #123-4567890-1234567 Has Shipped",
+        "body": "Hello Ayah,\n\nYour order has been shipped and is on its way! You can track your package here: [link].\n\nThank you for shopping with us,\nThe Amazon Team",
+        "is_phish": False,
+        "image": "safe_email_1.png",  # Placeholder for safe email image
+        "explanation": "This email is legitimate because the sender is from Amazon's official domain, the content is relevant, and the link directs to Amazon's website."
     },
     {
-        "sender": "contact@secure-gmail.com",
-        "subject": "Your Google Account has been compromised",
-        "body": "Dear User, we detected unauthorized sign-in activity in your Google account. Click this link to secure your account.",
-        "is_phish": True,
-        "image": "phish_email_4.png",  # Placeholder for phishing email image
-        "explanation": "The sender's email address is not a legitimate Google address. Google also never sends urgent emails like this asking for your personal credentials. Always verify by visiting the official Google website."
-    },
-    {
-        "sender": "admin@taxrefund.gov",
-        "subject": "Your Tax Refund Is Ready for Deposit",
-        "body": "Congratulations! Your tax refund is ready for deposit. Please provide your bank details to receive your refund.",
-        "is_phish": True,
-        "image": "phish_email_5.png",  # Placeholder for phishing email image
-        "explanation": "This is a classic phishing attempt. The IRS will never ask for sensitive information via email. The grammar is also suspicious, with incomplete phrases and vague language."
-    },
-    {
-        "sender": "no-reply@netflix.com",
-        "subject": "Account Suspension Notice",
-        "body": "Dear Customer, we have temporarily suspended your Netflix account due to suspicious activity. Please confirm your payment details here to restore access.",
-        "is_phish": True,
-        "image": "phish_email_6.png",  # Placeholder for phishing email image
-        "explanation": "This email is phishing because Netflix will never ask for payment details via email. The email address is also not the official Netflix domain, which is another red flag."
+        "sender": "billing@spotify.com",
+        "subject": "Your Spotify Premium Subscription Renewal Confirmation",
+        "body": "Hi Ayah,\n\nYour Spotify Premium subscription has been successfully renewed. The payment of $9.99 has been charged to your account.\n\nNeed help? Contact us here: [link].\n\nThanks,\nThe Spotify Team",
+        "is_phish": False,
+        "image": "safe_email_2.png",  # Placeholder for safe email image
+        "explanation": "This email is legitimate because it comes from Spotify's official domain, does not ask for sensitive information, and communicates relevant details."
     },
     {
         "sender": "info@bestbuy.com",
@@ -47,6 +30,30 @@ emails = [
         "explanation": "Phishing attempt. Best Buy would not ask for sensitive personal details in this manner. The email also uses a non-secure link, which is a common tactic used in phishing scams."
     },
     {
+        "sender": "alerts@chase.com",
+        "subject": "Unusual Activity Detected on Your Credit Card",
+        "body": "Dear Ayah Abdeldayem,\n\nWe detected unusual activity on your Chase credit card ending in 1234. Please log into your account via the Chase website or app to review the transaction.\n\nFor security, we have not included a link in this email. Please visit chase.com directly to access your account.\n\nThank you for your attention,\nChase Customer Service",
+        "is_phish": False,
+        "image": "safe_email_3.png",  # Placeholder for safe email image
+        "explanation": "This email is legitimate because Chase avoids including links, uses their official domain, and encourages secure practices."
+    },
+    {
+        "sender": "security@facebook-alert.com",
+        "subject": "Your Facebook account has been compromised",
+        "body": "Your Facebook account is at risk! Please log in now to verify your account details and change your password.",
+        "is_phish": True,
+        "image": "phish_email_9.png",  # Placeholder for phishing email image
+        "explanation": "Phishing attempt. The sender's domain is suspicious, and Facebook would not ask for such details via email."
+    },
+    {
+        "sender": "support@paypal.com",
+        "subject": "You’ve received money!",
+        "body": "Hi Ayah,\n\nYou have received $50.00 from John Smith. Log in to your PayPal account to review the transaction.\n\nThanks for using PayPal,\nThe PayPal Team",
+        "is_phish": False,
+        "image": "safe_email_4.png",  # Placeholder for safe email image
+        "explanation": "This email is legitimate because it comes from PayPal's official domain, does not include any suspicious links, and provides accurate transaction details."
+    },
+    {
         "sender": "info@officialbank.com",
         "subject": "Your Bank Account Has Been Suspended",
         "body": "Your bank account has been suspended due to suspicious activity. Click this link to verify your identity and restore access.",
@@ -55,22 +62,32 @@ emails = [
         "explanation": "The email uses urgent language and requests sensitive information via a link. Legitimate banks will never ask you to verify your account through a link sent in an email."
     },
     {
-        "sender": "amazon-customer-support@service.com",
-        "subject": "Your Amazon Account has been temporarily blocked",
-        "body": "Your Amazon account has been temporarily blocked due to suspicious activity. Click here to verify your information and restore access.",
-        "is_phish": True,
-        "image": "phish_email_9.png",  # Placeholder for phishing email image
-        "explanation": "This email is phishing because the sender address is not from Amazon's official domain. Also, Amazon will never ask you to click a link to verify your account via email."
+        "sender": "team@linkedin.com",
+        "subject": "You Have a New Connection Request",
+        "body": "Hi Ayah,\n\nYou have a new connection request from John Smith. View their profile and decide if you'd like to connect.\n\n[Accept] [Decline]\n\nRegards,\nThe LinkedIn Team",
+        "is_phish": False,
+        "image": "safe_email_5.png",  # Placeholder for safe email image
+        "explanation": "This email is legitimate because it comes from LinkedIn's official domain, uses clear and relevant messaging, and does not request sensitive information."
     },
     {
-        "sender": "news@bestdeal.com",
-        "subject": "Limited Time Offer: Get a Free iPhone!",
-        "body": "Get the latest iPhone for free today! Click here to claim your reward.",
-        "is_phish": True,
-        "image": "phish_email_10.png",  # Placeholder for phishing email image
-        "explanation": "This is clearly phishing. No legitimate company would offer an iPhone for free with such an unrealistic offer. The email also contains no contact information or official branding."
-    }
+    "sender": "admin@university-portal.com",
+    "subject": "Password Expiration Notification",
+    "body": "Dear Student,\n\nYour university account password is set to expire in 24 hours. Please update your password immediately to avoid being locked out. Click here to update: [link].\n\nSincerely,\nUniversity IT Support",
+    "is_phish": True,
+    "image": "phish_email_10.png",  # Placeholder for phishing email image
+    "explanation": "Phishing attempt. The domain is suspicious ('university-portal.com' instead of the university's actual domain). Universities typically use their official portals for account updates."
+},
+{
+    "sender": "alerts@apple-security.com",
+    "subject": "Unusual Login Attempt on Your Apple ID",
+    "body": "Hello,\n\nWe noticed an unusual login attempt on your Apple ID from an unknown device. If this was not you, please secure your account immediately by clicking the link below:\n\n[Secure My Account]\n\nThanks,\nApple Security Team",
+    "is_phish": True,
+    "image": "phish_email_11.png",  # Placeholder for phishing email image
+    "explanation": "Phishing attempt. The domain ('apple-security.com') is not Apple's official domain. Apple would ask you to log in via their official site or app without including suspicious links."
+}
+
 ]
+
 
 # Initialize score and email pool
 score = 0
