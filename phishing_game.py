@@ -14,6 +14,11 @@ emails = [
         "explanation": "This email is legitimate because the sender is from Amazon's official domain, the content is relevant, and the link directs to Amazon's website."
     },
     {
+        "image": "paypal.png",
+        "is_phish" : False
+
+    },
+    {
         "sender": "billing@spotify.com",
         "subject": "Your Spotify Premium Subscription Renewal Confirmation",
         "body": "Hi Audrey,\n\nYour Spotify Premium subscription has been successfully renewed. The payment of $9.99 has been charged to your account.\n\nNeed help? Contact us here: [link].\n\nThanks,\nThe Spotify Team",
@@ -45,6 +50,7 @@ emails = [
         "image": "phish_email_9.png",  # Placeholder for phishing email image
         "explanation": "Phishing attempt. The sender's domain is suspicious, and Facebook would not ask for such details via email."
     },
+
     {
         "sender": "support@paypal.com",
         "subject": "You’ve received money!",
