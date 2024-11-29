@@ -10,7 +10,7 @@ emails = [
         "subject": "Your Amazon Order #123-4567890-1234567 Has Shipped",
         "body": "Hello Ciara,\n\nYour order has been shipped and is on its way! You can track your package here: [link].\n\nThank you for shopping with us,\nThe Amazon Team",
         "is_phish": False,
-        "image": "safe_email_1.png",  # Placeholder for safe email image
+        "image": "credit_card_phishing.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because the sender is from Amazon's official domain, the content is relevant, and the link directs to Amazon's website."
     },
     {
