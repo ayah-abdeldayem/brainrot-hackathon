@@ -10,7 +10,7 @@ emails = [
         "subject": "Your Amazon Order #123-4567890-1234567 Has Shipped",
         "body": "Hello Ciara,\n\nYour order has been shipped and is on its way! You can track your package here: [link].\n\nThank you for shopping with us,\nThe Amazon Team",
         "is_phish": False,
-        "image": "credit_card_phishing.png",  # Placeholder for safe email image
+        "image": "amazon.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because the sender is from Amazon's official domain, the content is relevant, and the link directs to Amazon's website."
     },
     {
@@ -18,7 +18,7 @@ emails = [
         "subject": "Your Spotify Premium Subscription Renewal Confirmation",
         "body": "Hi Audrey,\n\nYour Spotify Premium subscription has been successfully renewed. The payment of $9.99 has been charged to your account.\n\nNeed help? Contact us here: [link].\n\nThanks,\nThe Spotify Team",
         "is_phish": False,
-        "image": "safe_email_2.png",  # Placeholder for safe email image
+        "image": "spotify.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because it comes from Spotify's official domain, does not ask for sensitive information, and communicates relevant details."
     },
     {
@@ -26,7 +26,7 @@ emails = [
         "subject": "Your Best Buy Account has been locked",
         "body": "We have detected unusual activity on your Best Buy account. To unlock your account, click here and confirm your personal details.",
         "is_phish": True,
-        "image": "phish_email_7.png",  # Placeholder for phishing email image
+        "image": "best_buy.png",  # Placeholder for phishing email image
         "explanation": "Phishing attempt. Best Buy would not ask for sensitive personal details in this manner. The email also uses a non-secure link, which is a common tactic used in phishing scams."
     },
     {
@@ -34,7 +34,7 @@ emails = [
         "subject": "Unusual Activity Detected on Your Credit Card",
         "body": "Dear Audrey Chen,\n\nWe detected unusual activity on your Chase credit card ending in 1234. Please log into your account via the Chase website or app to review the transaction.\n\nFor security, we have not included a link in this email. Please visit chase.com directly to access your account.\n\nThank you for your attention,\nChase Customer Service",
         "is_phish": False,
-        "image": "safe_email_3.png",  # Placeholder for safe email image
+        "image": "chase.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because Chase avoids including links, uses their official domain, and encourages secure practices."
     },
     {
@@ -42,7 +42,7 @@ emails = [
         "subject": "Your Facebook account has been compromised",
         "body": "Your Facebook account is at risk! Please log in now to verify your account details and change your password.",
         "is_phish": True,
-        "image": "phish_email_9.png",  # Placeholder for phishing email image
+        "image": "facebook.png",  # Placeholder for phishing email image
         "explanation": "Phishing attempt. The sender's domain is suspicious, and Facebook would not ask for such details via email."
     },
     
@@ -51,7 +51,7 @@ emails = [
         "subject": "You’ve received money!",
         "body": "Hi Ciara,\n\nYou have received $50.00 from John Smith. Log in to your PayPal account to review the transaction.\n\nThanks for using PayPal,\nThe PayPal Team",
         "is_phish": False,
-        "image": "safe_email_4.png",  # Placeholder for safe email image
+        "image": "paypal.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because it comes from PayPal's official domain, does not include any suspicious links, and provides accurate transaction details."
     },
     {
@@ -59,7 +59,7 @@ emails = [
         "subject": "Your Bank Account Has Been Suspended",
         "body": "Your bank account has been suspended due to suspicious activity. Click this link to verify your identity and restore access.",
         "is_phish": True,
-        "image": "phish_email_8.png",  # Placeholder for phishing email image
+        "image": "bank_card.jpeg",  # Placeholder for phishing email image
         "explanation": "The email uses urgent language and requests sensitive information via a link. Legitimate banks will never ask you to verify your account through a link sent in an email."
     },
     {
@@ -67,7 +67,7 @@ emails = [
         "subject": "You Have a New Connection Request",
         "body": "Hi Morgan,\n\nYou have a new connection request from John Smith. View their profile and decide if you'd like to connect.\n\n[Accept] [Decline]\n\nRegards,\nThe LinkedIn Team",
         "is_phish": False,
-        "image": "safe_email_5.png",  # Placeholder for safe email image
+        "image": "linkedln.png",  # Placeholder for safe email image
         "explanation": "This email is legitimate because it comes from LinkedIn's official domain, uses clear and relevant messaging, and does not request sensitive information."
     },
     {
@@ -75,7 +75,7 @@ emails = [
     "subject": "Password Expiration Notification",
     "body": "Dear Student,\n\nYour university account password is set to expire in 24 hours. Please update your password immediately to avoid being locked out. Click here to update: [link].\n\nSincerely,\nUniversity IT Support",
     "is_phish": True,
-    "image": "phish_email_10.png",  # Placeholder for phishing email image
+    "image": "UK.jpeg",  # Placeholder for phishing email image
     "explanation": "Phishing attempt. The domain is suspicious ('university-portal.com' instead of the university's actual domain). Universities typically use their official portals for account updates."
 },
 {
@@ -83,7 +83,7 @@ emails = [
     "subject": "Unusual Login Attempt on Your Apple ID",
     "body": "Hello,\n\nWe noticed an unusual login attempt on your Apple ID from an unknown device. If this was not you, please secure your account immediately by clicking the link below:\n\n[Secure My Account]\n\nThanks,\nApple Security Team",
     "is_phish": True,
-    "image": "phish_email_11.png",  # Placeholder for phishing email image
+    "image": "apple.jpeg",  # Placeholder for phishing email image
     "explanation": "Phishing attempt. The domain ('apple-security.com') is not Apple's official domain. Apple would ask you to log in via their official site or app without including suspicious links."
 }
 ]
