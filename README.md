@@ -24,6 +24,8 @@ Run:
 
 📸 Screenshots
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/edebffef-f64f-4f5a-ab92-4f3d7aa2f62b">
+![image](https://github.com/user-attachments/assets/02386b31-6a58-42fd-be08-fad9aa728135)
+
 
 Main Gameplay Screen
 
