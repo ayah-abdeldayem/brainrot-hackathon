@@ -21,3 +21,20 @@ Run:
   cd PhishFemme
 3. Run the application:
    python main.py
+
+📸 Screenshots
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/edebffef-f64f-4f5a-ab92-4f3d7aa2f62b">
+
+Main Gameplay Screen
+
+Final Score & Tips
+
+🛠 What's Next?
+1. Adding more phishing scenarios (text messages, social media, etc.).
+2. Introducing a competitive leaderboard.
+3. Expanding accessibility with a web-based version.
+🖇 Contributing
+Have ideas to improve PhishFemme? Feel free to open an issue or submit a pull request.
+
+📧 Contact
+For questions or feedback, reach out at ayah.abdeldayem@uky.edu
